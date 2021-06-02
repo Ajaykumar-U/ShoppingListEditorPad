@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingBottom="3dp"
+    android:background="@android:color/holo_red_dark"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvItemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Item Name"
+        android:textSize="18dp"
+        android:paddingTop="6dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="2dp"
+        android:textColor="@android:color/holo_red_light"
+        android:background="#fff"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvItemWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Item Weight"
+        android:textSize="18dp"
+        android:paddingTop="2dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="6dp"
+        android:textColor="@android:color/holo_red_light"
+        android:background="#fff"
+        app:layout_constraintTop_toBottomOf="@id/tvItemName"
+        app:layout_constraintLeft_toLeftOf="@id/tvItemName"
+        app:layout_constraintRight_toRightOf="@id/tvItemName"/>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:paddingTop="6dp"
+        android:clickable="false"
+        android:buttonTint="@android:color/holo_red_light"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvItemName"
+        app:layout_constraintBottom_toBottomOf="@id/tvItemName"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

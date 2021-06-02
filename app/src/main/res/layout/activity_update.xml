@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateActivity">
+
+    <TextView
+        android:id="@+id/tvMainHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shopping List - Update"
+        android:textSize="20dp"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:background="@android:color/holo_red_dark"
+        android:padding="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/etUpdateName"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="20dp"
+        android:layout_marginTop="619dp"
+        android:layout_marginBottom="532dp"
+        android:hint="Enter Shopping Item?"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMainHeading"
+        app:layout_constraintVertical_bias="0.201" />
+
+    <EditText
+        android:id="@+id/etUpdateWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Weight?"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="18dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etUpdateName"/>
+
+    <CheckBox
+        android:id="@+id/cbUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mark as finished"
+        android:textSize="16dp"
+        android:buttonTint="@android:color/holo_red_light"
+        app:layout_constraintTop_toBottomOf="@id/etUpdateWeight"
+        app:layout_constraintLeft_toLeftOf="@id/etUpdateWeight"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Update"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:textColor="#fff"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cbUpdate"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Delete"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:textColor="#fff"
+        app:layout_constraintLeft_toRightOf="@id/btnUpdate"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cbUpdate"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
