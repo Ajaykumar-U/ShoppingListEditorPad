@@ -1,16 +1,19 @@
-package com.kotlinandroid.shoppinglist;
+package com.kotlinandroid.shoppinglist.ShoppingDisplay;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.kotlinandroid.shoppinglist.DatabaseModel.ShoppingItem;
+import com.kotlinandroid.shoppinglist.R;
+import com.kotlinandroid.shoppinglist.UpdateShoppingItem.UpdateActivity;
 
 import java.util.List;
 
@@ -18,10 +21,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
 
     boolean check;
 
-    List<ShoppingItemEntity> dataList;
+    List<ShoppingItem> dataList;
     Context ctx;
 
-    public RecyclerAdapter(List<ShoppingItemEntity> dataList, Context ctx) {
+    public RecyclerAdapter(List<ShoppingItem> dataList, Context ctx) {
         this.dataList = dataList;
         this.ctx = ctx;
     }
@@ -36,10 +39,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         ViewHolder holder1= (ViewHolder) holder;
-        ShoppingItemEntity shoppingItemEntity = dataList.get(position);
-        holder1.tvItemName.setText("Name   : "+shoppingItemEntity.getItemName());
-        holder1.tvItemWeight.setText("Weight : "+shoppingItemEntity.getItemWeight());
-        if(shoppingItemEntity.isCheckItem()){
+        ShoppingItem shoppingItem = dataList.get(position);
+        holder1.tvItemName.setText("Name   : "+ shoppingItem.getItemName());
+        holder1.tvItemWeight.setText("Weight : "+ shoppingItem.getItemWeight());
+        if(shoppingItem.isCheckItem()){
             holder1.checkBox.setChecked(true);
         }
         else{
@@ -68,8 +71,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
 
         @Override
         public void onClick(View v) {
-            ShoppingItemEntity shoppingItemSelected = dataList.get(getAdapterPosition());
-            Intent intent = new Intent(ctx,UpdateActivity.class);
+            ShoppingItem shoppingItemSelected = dataList.get(getAdapterPosition());
+            Intent intent = new Intent(ctx, UpdateActivity.class);
             intent.putExtra("task",shoppingItemSelected);
             ctx.startActivity(intent);
         }

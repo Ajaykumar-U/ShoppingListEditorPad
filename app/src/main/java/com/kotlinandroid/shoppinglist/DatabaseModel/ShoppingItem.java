@@ -1,4 +1,4 @@
-package com.kotlinandroid.shoppinglist;
+package com.kotlinandroid.shoppinglist.DatabaseModel;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 import java.io.Serializable;
 
 @Entity
-public class ShoppingItemEntity implements Serializable {
+public class ShoppingItem implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     private int id;

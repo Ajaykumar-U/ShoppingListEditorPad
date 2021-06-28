@@ -9,12 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShoppingList">
-        <activity android:name=".UpdateActivity"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".AddActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".MainActivity"
-            android:launchMode="singleTask">
+        <activity android:name=".UpdateShoppingItem.UpdateActivity"
+            android:parentActivityName=".ShoppingDisplay.ShoppingActivity"></activity>
+        <activity android:name=".AddShoppingItem.AddActivity"
+            android:parentActivityName=".ShoppingDisplay.ShoppingActivity"/>
+        <activity android:name=".ShoppingDisplay.ShoppingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
